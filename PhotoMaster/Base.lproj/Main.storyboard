@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hw-Wl-EbU">
+                                <rect key="frame" x="20" y="550" width="75" height="30"/>
+                                <state key="normal" title="画像を取得"/>
+                                <connections>
+                                    <action selector="selectButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEu-H9-J2S"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3I2-8a-SxP">
+                                <rect key="frame" x="0.0" y="28" width="600" height="514"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgg-g0-IbI">
+                                <rect key="frame" x="285" y="550" width="30" height="30"/>
+                                <state key="normal" title="合成"/>
+                                <connections>
+                                    <action selector="processButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mrJ-72-nR4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d01-qm-ijY">
+                                <rect key="frame" x="490" y="550" width="90" height="30"/>
+                                <state key="normal" title="アップロード"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3I2-8a-SxP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0Zx-PS-Lbp"/>
+                            <constraint firstItem="pgg-g0-IbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I4l-2X-bU8"/>
+                            <constraint firstItem="5hw-Wl-EbU" firstAttribute="top" secondItem="3I2-8a-SxP" secondAttribute="bottom" constant="8" id="Irh-rs-6qz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3I2-8a-SxP" secondAttribute="trailing" constant="-20" id="SSu-Ne-Q4O"/>
+                            <constraint firstItem="d01-qm-ijY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="V2C-BW-Jzc"/>
+                            <constraint firstItem="3I2-8a-SxP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="dKP-zQ-cwh"/>
+                            <constraint firstItem="pgg-g0-IbI" firstAttribute="centerY" secondItem="5hw-Wl-EbU" secondAttribute="centerY" id="ev1-u8-oHa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5hw-Wl-EbU" secondAttribute="bottom" constant="20" id="fKV-V4-qLd"/>
+                            <constraint firstItem="d01-qm-ijY" firstAttribute="centerY" secondItem="5hw-Wl-EbU" secondAttribute="centerY" id="fLV-hB-7dZ"/>
+                            <constraint firstItem="5hw-Wl-EbU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nak-UJ-gDv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="3I2-8a-SxP" id="qn8-ST-LN0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="324" y="387"/>
         </scene>
     </scenes>
 </document>
